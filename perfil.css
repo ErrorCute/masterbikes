@@ -1,0 +1,24 @@
+.carousel {
+    width: 550px;
+    height: 480px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+
+}
+.texto{
+
+    margin-left: 100px;
+
+}
+.p{
+
+    display: flex;
+    justify-content: center;
+}
+.boton{
+    text-align: right;
+    justify-content: right;
+}
