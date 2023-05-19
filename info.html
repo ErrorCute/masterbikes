@@ -8,19 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     
     <link rel="stylesheet" href="style.css">
-    <script src="scrip/carrito.js"></script>
-    <script src="scrip/moneda.js"></script>
+    
 
 </head>
-  
-<body  >
-
-
-
-
-  <!-- barra  navegacion -->
- 
-
+<body>
+    
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary"  >
   <div class="container-fluid">
@@ -76,143 +68,34 @@
 </nav>
 
 <br>
-
-  
-   
-
-
-
-<div class="container" style=" background-color:rgba(0, 153, 102); ">
-
-
-
-
-  
-
-	<div id="productos" style="color: aliceblue;" >
-		<h1>Carrito de compras</h1>
-    <h2>Productos disponibles</h2>
+<!-- Quienes somos -->
+<div class="container" style="background-color:rgba(0, 153, 102);">
+  <h1 class="h2" style="color:aliceblue">¿ Quienes somos ?</h1>
+  <br>
+  <p class="p2" style="color:aliceblue"> MasterBikes es una mini empresa apasionada por el mundo de las bicicletas. 
+    Nos especializamos en la venta de repuestos de alta calidad y ofrecemos servicios de reparación y mantenimiento de bicicletas. 
+    Con años de experiencia y conocimiento en el sector, nuestro objetivo es brindar a nuestros clientes soluciones confiables
+     y rápidas para mantener sus bicicletas en óptimas condiciones. Nos enorgullece ser un equipo comprometido con el servicio 
+    al cliente y proporcionar productos y servicios excepcionales para satisfacer las necesidades de los amantes de las bicicletas.</p>
     <br>
-
-
-      <div class="row">
-
-    
-    
-      <div class="col-3">
-
-        <div class="card" style="width: 15rem;">
-            <img src="imagenes/producto_cadena.jpG" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cadena bicicleta</h5>
-              <p class="card-text "  >Cadena de bicicleta Shimano Nexus 1 Velocidad .</p>
-              <p class="card-text " style="color: rgb(15, 214, 15);" >Precio : $17.990 </p>
-              <a  class="btn btn-primary"  onclick="agregarProducto('Cadena nexus',17990)">Añadir Carrito</a>
-
-            </div>
-          </div>
-         </div>
-<!--  -->
-
-<div class="col-3">
-  <div class="card" style="width: 15rem;">
-      <img src="imagenes/producto_marco.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Marco bicicleta</h5>
-        <p class="card-text "  >Marco de bicicleta marca JUMPER.</p>
-        <p class="card-text " style="color: rgb(15, 214, 15);" >Precio : $19.990 </p>
-        <a  class="btn btn-primary"  onclick="agregarProducto('Marco',19990)">Añadir Carrito</a>
-
-      </div>
-    </div>
-
-  </div>
-
-
-     
-<!--  -->
-
-
-<div class="col-3" >
-
-  <div class="card" style="width: 15rem;">
-  <img src="imagenes/producto_camara.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Camara bicicleta</h5>
-    <p class="card-text "  >Camara de bicicleta aro 16 .</p>
-    <p class="card-text " style="color: rgb(15, 214, 15);" >Precio : $5.000 </p>
-    <a  class="btn btn-primary"  onclick="agregarProducto('camara ',5000)">Añadir Carrito</a>
-  </div>
-
-  
-</div>
-
-
-</div>
-
-
-<!--  -->
-
-
-
-<div class="col-3">
-
-  
-	<div id="carrito">
-		<h2>Carrito de compras</h2>
-		
-    <p>Total: $<span id="total">0</span></p>
-    <ul id="listaCarrito"></ul>
-		
-    
-    <div class="container" id="moneda" style=" background-color:rgba(0, 153, 102);">
-  
-      <div>
-       <table class="table-success" id="moneda">
-    
-       <thead>
-       <tr>
-         <th scope="col"> <h5>Moneda</h5<></th>
-       </tr>
-       </thead>
-    <tr>
-    <td><div id="UF"></div> </td>
-    </tr>
-    <tr>
-    <td><div id="DolarO"></div></td>
-    </tr>
-    <tr>
-    <td> <div id="DolarA"></div></td>
-    </tr>
-    <tr>
-     <td> <div id="UTM"></div></td>
-    </tr>
-    </table>
-    </div>
+    <h1 class="h2" style="color:aliceblue">Mision</h1>
     <br>
-    </div>
-	
-
+    <p class="p2" style="color:aliceblue">Nuestra misión en MasterBikes es ser el referente principal en la venta de repuestos de bicicletas y 
+      servicios de reparación en nuestra comunidad. Nos comprometemos a proporcionar productos de calidad y soluciones 
+      eficientes para satisfacer las necesidades de nuestros clientes, brindando un excelente servicio al cliente y 
+      manteniendo un enfoque constante en la satisfacción del ciclista.</p>
+      <br>
+      <h1 class="h2" style="color:aliceblue">Vision</h1>
+      <br>
+      <p class="p2" style="color:aliceblue">Nuestra visión en MasterBikes es fomentar una cultura ciclista saludable y sostenible, 
+        promoviendo el uso de la bicicleta como medio de transporte y recreación. 
+        Aspiramos a convertirnos en una empresa reconocida a nivel regional por nuestra amplia gama de repuestos y 
+        servicios especializados, así como por nuestra capacidad de brindar soluciones innovadoras y personalizadas. 
+        Nos esforzamos por ser un aliado confiable y confiable para todos los entusiastas de las bicicletas, 
+        contribuyendo así al crecimiento y desarrollo de la comunidad ciclista.</p>
+        <br>
+        <img class="imagen" src="imagenes/logo1.png" alt="" >
 </div>
-
-</div>
-
-
-</div>
-
-
-
-
-
- </div>
-
-
-<br>
-<!---------  div contaainer producto  -- -->
-</div>
-
-
-
 
 
 
@@ -229,4 +112,5 @@
 </body>
 
 
-  </html>
+
+</html>
