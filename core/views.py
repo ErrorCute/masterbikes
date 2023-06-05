@@ -21,9 +21,14 @@ def productos(request):
     return render(request,'core/productos.html')  
 
 
+def arriendo(request):
+    return render(request,'core/arriendo.html')  
+
+def servicios(request):
+    return render(request,'core/servicios.html')  
+
 def base(request):
     return render(request,'core/base.html')  
-
 
 
 

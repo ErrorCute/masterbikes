@@ -13,7 +13,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="{% static 'core/'%}js/scriplogin.js"></script>
     <script src="{% static 'core/'%}js/scripformulario.js"></script>
-    
+    <script src="{% static 'core/'%}js/scriparriendo.js"></script>
+    <script src="{% static 'core/'%}js/scripservicios.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="{% static 'core/'%}js/carrito.js"></script>
     <script src="{% static 'core/'%}js/moneda.js"></script>
@@ -41,11 +43,11 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="#"style="color:aliceblue">Sevicios</a>
+            <a class="nav-link" href="{% url 'servicios' %}"style="color:aliceblue">Sevicios</a>
           </li>
           <li class="nav-item">
 
-            <a class="nav-link" href="#"style="color:aliceblue">Arriendo</a>
+            <a class="nav-link" href="{% url 'arriendo' %}"style="color:aliceblue">Arriendo</a>
           </li>
           
           <li class="nav-item">
