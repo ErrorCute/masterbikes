@@ -9,7 +9,7 @@
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   
-    <script src="{% static 'core/'%}js/scripformulario.js"></script>
+    <script src="{% static 'core/'%}js/scripsevicios.js"></script>
   
     <link rel="stylesheet" href="{% static 'core/'%}css/style.css">
   
@@ -96,29 +96,30 @@
         
         
        <div>
-        <h1 class="center" style="color: aliceblue;">Ingrese Datos Personales</h1>
+        <h1 class="center" style="color: aliceblue;">Ingrese Datos de Servicio</h1>
     </div>
 
-          <form action="" id= "formulario">
+          <form action="" id= "formulario-servicios">
             
-              <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" name="nombre" id="nombre">
+              <label for="nombre_encargo">Nombre</label>
+              <input type="text" class="form-control" name="nombre_encargo" id="nombre_encargo">
               <br>
               <label for="correo" >Correo electroninco</label>
-              <input type="text"   maxlength="40" class="form-control" name="correo" id="correo">
+              <input type="text"   maxlength="40" class="form-control" name="" id="correo">
                 <br>
-              <label for="pas">password</label>
-              <input type="password"  minlength="8" maxlength="12" class="form-control" name="pas" id="pas">
+              <label for="tipo_bicicleta">Tipo bicileta</label>
+              <input type="text" class="form-control" name="tipo_bicicleta" id="tipo_bicicleta">
+              <br>
+              <label for="modelo" >Modelo bicicleta</label>
+              <input type="text"   maxlength="40" class="form-control" name="modelo" id="modelo">
                 <br>
-              <label for="fec">Fecha Nacimiento</label>
-              <input type="date" class="form-control" name="fec" id="fec">
-              <br>
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault">Acepta condiciones </label>
-              <br>
-              <br>
+              <label for="descripcion" >Descripcion falla</label>
+              <textarea class="form-control" id="descripcion" rows="4"></textarea>
+                <br>
+
+
               <div id="errores" class="alert alert-danger"></div>
-              <input type="submit" class="btn btn-danger" id="enviar" value="Subcribirse">
+              <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
               <input type="reset" class="btn btn-primary" id="limpiar" value="limpiar">
               
               <br>
