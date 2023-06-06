@@ -21,3 +21,7 @@ urlpatterns = [
     path('', include('core.urls')),
     
 ]
+
+admin.site.site_header = " Administracion de Master bikes"
+
+
