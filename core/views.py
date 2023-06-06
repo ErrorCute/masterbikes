@@ -49,3 +49,4 @@ def vistaArriendo(request):
     return render(request,'core/vistaArriendo.html')
 
 
+
