@@ -1,0 +1,99 @@
+{% extends 'core/base.html' %}
+
+
+  {% load static %} 
+
+  {% block contenido %} 
+
+
+<div class="container-lg" style="background-color:rgba(0, 153, 102);">
+        <div class="row">
+    
+    
+        <div class="col-3">
+
+        <div class="card" style="width: 17rem;">
+        <img src="{% static 'core/'%}img/carrusel_bmx.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">Power Fly 4</h5>
+        </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">No disponible</li>
+            <a href="{% url 'arriendo' %}" class="card-link">Arriendo</a>
+        
+        </div>
+        </div>
+        </div>
+        <br>
+        <div class="col-3" style="background-color:rgba(255,255,255);">
+          <h5 class="card-title">Descripcion</h5>
+          <p>La Powerfly es una bicicleta eléctrica de montaña preparada para la aventura equipada con un discreto sistema Bosch que amplifica la potencia de pedaleo. Te permite recorrer distancias más largas a más velocidad, subir con más facilidad por pendientes complicadas y divertirte más por cualquier sendero. <p>
+        </div>
+
+</div>
+
+<div class="container-lg" style="background-color:rgba(0, 153, 102);">
+  <div class="row">
+
+
+  <div class="col-3">
+
+  <div class="card" style="width: 17rem;">
+  <img src="{% static 'core/'%}img/bicicleta_paseo.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+  <h5 class="card-title">Lahsen Provenza</h5>
+  </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+      <li class="list-group-item">Disponible lueoz</li>
+      <a href="{% url 'arriendo' %}" class="card-link">Arriendo</a>
+  
+  </div>
+  </div>
+  </div>
+  <br>
+  <div class="col-3" style="background-color:rgba(255,255,255);">
+    <h5 class="card-title">Descripcion</h5>
+    <p>La bicicleta Lahsen Provenza es el equilibrio perfecto entre estilo y funcionalidad. Con un diseño elegante y clásico, esta bicicleta te brinda una experiencia de paseo cómoda y suave.<p>
+  </div>
+
+  <div class="container-lg" style="background-color:rgba(0, 153, 102);">
+    <div class="row">
+
+
+    <div class="col-3">
+
+    <div class="card" style="width: 17rem;">
+    <img src="{% static 'core/'%}img/bicicleta_pistera.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title">Lahsen ATX80</h5>
+    </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">Disponible</li>
+        <a href="{% url 'arriendo' %}" class="card-link">Arriendo</a>
+    
+    </div>
+    </div>
+    </div>
+    <br>
+    <div class="col-3" style="background-color:rgba(255,255,255);">
+      <h5 class="card-title">Descripcion</h5>
+      <p>La bicicleta Lahsen ATX80 es la opción ideal para los amantes de la velocidad y la emoción en la pista. Diseñada para brindar un rendimiento óptimo, esta bicicleta de alta gama cuenta con un cuadro aerodinámico y ligero que te permite alcanzar velocidades impresionantes. <p>
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+  {% endblock %}

@@ -30,5 +30,6 @@ def servicios(request):
 def base(request):
     return render(request,'core/base.html')  
 
-
+def vistaArriendo(request):
+    return render(request,'core/vistaArriendo.html')
 
