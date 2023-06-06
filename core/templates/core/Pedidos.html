@@ -1,0 +1,52 @@
+
+
+{% extends 'core/base.html' %}
+ 
+
+ {% load static %} 
+ 
+  
+
+  
+{% block contenido %}       
+
+<div class="container" style=" background-color:rgba(0, 153, 102);">
+<h1  style="color: aliceblue;">Mis Pedidos</h1>
+</div>
+
+<div class="container" style=" background-color:rgba(0, 153, 102);">
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">Numero orde </th>
+        <th scope="col">Cod Producto </th>
+        <th scope="col">fecha comprar </th>
+        <th scope="col">fecha despachon </th>
+        <th scope="col">fecha entrega </th>
+    </tr>
+    </thead>
+    {% for p in pedidos %} 
+    <tbody>
+        <tr>
+            <td> {{ p.nro_orden }} </td>
+            <td> {{ p.cod_producto }} </td>
+            <td> {{ p.fecha_compra }} </td>
+            <td> {{ p.fecha_despacho }} </td>
+            <td> {{ p.fecha_entrega }} </td>
+            <br>
+
+        </tr>
+    </tbody>
+    {% endfor %}
+  
+</table>
+
+
+</div>
+ <div class="container" style=" background-color:rgba(0, 153, 102);" >
+<a class="btn btn-danger" href="{% url 'carrito' %}" role="button"> Regresar al carrito</a>
+</div>
+
+
+{% endblock %}
