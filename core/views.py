@@ -1,10 +1,6 @@
 from django.shortcuts import render
 from .models import Pedido
 
-
-def home(request):
-    return render(request,'core/home.html')
-
 def Pedidos(request):
     pedidos= Pedido.objects.all()
     data = {

@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import base,home,carrito,form,info,login,productos,arriendo,servicios,vistaArriendo,Pedidos
+from .views import base,carrito,form,info,login,productos,arriendo,servicios,vistaArriendo,Pedidos
 
 urlpatterns=[
   
     path('',base,name="base"),
-    path('home',home, name="home"),
     path('carrito',carrito, name ="carrito"),
     path('form',form, name ="form"),
     path('info',info, name="info"),
