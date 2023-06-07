@@ -26,3 +26,11 @@ class Pedido(models.Model):
    
     def __str__(self):
         return self.nro_orden
+    
+
+
+class Usuario(models.Model):
+    usuario= models.CharField(primary_key=True,max_length=11)
+    clave =models.CharField(max_length=100)
+    rut =models.ForeignKey(Cliente,on_delete=CASCADE)
+

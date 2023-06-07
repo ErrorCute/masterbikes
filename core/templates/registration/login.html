@@ -22,18 +22,15 @@
        
     <div class="container" style="background-color:rgba(0, 153, 102);" >
       
-        <form action=""  id="login">
-         
-         
-            <label for="correo" >Correo electroninco</label>
-            <input type="text"class="form-control" name="correo" id="correo">
-            <br>
-            <label for="pas">password</label>
-            <input type="password"class="form-control" name="password" id="password">
-            
-            <br>
+        <form action=""  id="login" method="post">
+            {% csrf_token %}
+            <table>
 
-           <div id="errores" class="alert alert-danger"></div>
+
+              {{ form.as_table }}
+
+            </table>
+            
         
                 
            <input type="checkbox" class="form-check-input" role="switch" name="che" id="che">
@@ -41,8 +38,8 @@
                 
            
            
-            <input type="submit" class="btn btn-primary" id="enviar" value="enviar">
-            <input type="reset" class="btn btn-danger" id="limpiar" value="limpiar">
+            <input type="submit" class="btn btn-primary"  value="Login">
+            <input type="reset" class="btn btn-danger"  value="limpiar">
 
     
           

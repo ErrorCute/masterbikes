@@ -73,6 +73,11 @@
           <br>
       
           <a class="btn btn-success" href="{% url 'carrito' %}" class="nav-link" role="button"> 🛒</a>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="#">Usuario:{{ user.username}}</a>
+          </li>
+          {% endif%}
           <a class="btn btn-info" class="#" href="{% url 'login' %}" role="button" >👤</a>
           <a class="btn btn-primary" class="nav-link" href="{% url 'form' %}" role="button" >Suscribirse</a>
       <br>
