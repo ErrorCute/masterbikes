@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import Pedido,Usuario
+from django.contrib.auth.decorators import login_required,permission_required
+from .forms import UsuarioUserForm
 
+@login_required
 def Pedidos(request):
     pedidos= Pedido.objects.all()
     data = {
@@ -9,13 +12,18 @@ def Pedidos(request):
 
     return render(request,'core/Pedidos.html',data)  
 
+
 def carrito(request):
     return render(request,'core/carrito.html')
 
 
 
 def form(request):
-    return render(request,'core/form.html')
+    data = {
+        'form':UsuarioUserForm()
+    }
+    
+    return render(request,'registration/form.html',data)
 
 def info(request):
     return render(request,'core/info.html')
@@ -29,9 +37,9 @@ def login(request):
 
 
 def productos(request):
-    return render(request,'core/productos.html')  
+    return render(request,'core/productos.html')
 
-
+@login_required
 def arriendo(request):
     return render(request,'core/arriendo.html')  
 
@@ -42,6 +50,7 @@ def servicios(request):
 
 def base(request):
     return render(request,'core/base.html')  
+
 
 def vistaArriendo(request):
     return render(request,'core/vistaArriendo.html')
