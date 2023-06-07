@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Pedido
+from .models import Pedido,Usuario
 
 def Pedidos(request):
     pedidos= Pedido.objects.all()
@@ -21,13 +21,15 @@ def info(request):
     return render(request,'core/info.html')
 
 def login(request):
-    return render(request,'core/login.html')
+    Usuarios= Usuario.objects.all()
+    data = {
+        'usuarios':Usuarios
+    }
+    return render(request,'core/login.html',data)
+
 
 def productos(request):
     return render(request,'core/productos.html')  
-
-
-
 
 
 def arriendo(request):

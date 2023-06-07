@@ -54,9 +54,6 @@
 
             <a class="nav-link" href="{% url 'productos' %}" style="color:aliceblue">Productos</a>
           </li>
-
-      
-
           <li class="nav-item">
             <a class="nav-link" href="{% url 'info' %}" style="color:darkblue ">¿Quien Somos?</a>
           </li>
@@ -65,22 +62,18 @@
        
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+          
+          <button class="btn btn-outline-secondary" type="submit">Buscar</button><br>
         </form>
-         
-        
+        <br>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <br>
-      
-          <a class="btn btn-success" href="{% url 'carrito' %}" class="nav-link" role="button"> 🛒</a>
-          {% if user.is_authenticated %}
-          <li>
-            <a href="#">Usuario:{{ user.username}}</a>
-          </li>
-          {% endif%}
           <a class="btn btn-info" class="#" href="{% url 'login' %}" role="button" >👤</a>
+          {% if user.is_authenticated %}
+          <a  class="btn btn-info" href="#">{{ user.username}}</a>
+          <a class="btn btn-danger" href="{% url 'logout' %}">Cerrar </a>
+        {% endif%}
+          <a class="btn btn-success" href="{% url 'carrito' %}" class="nav-link" role="button"> 🛒</a>
           <a class="btn btn-primary" class="nav-link" href="{% url 'form' %}" role="button" >Suscribirse</a>
-      <br>
     
   </div>
       
