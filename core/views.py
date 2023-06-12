@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Pedido,Usuario
 from django.contrib.auth.decorators import login_required,permission_required
 from .forms import UsuarioUserForm
+from django.contrib.auth import authenticate,login
 
 @login_required
 def Pedidos(request):
@@ -20,20 +21,25 @@ def carrito(request):
 
 def form(request):
     data = {
-        'form':UsuarioUserForm()
+        'form': UsuarioUserForm()
     }
+    if request.method == 'POST':
+        formulario = UsuarioUserForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request, user)
+           
+            return redirect('base')
+        
     
     return render(request,'registration/form.html',data)
+
 
 def info(request):
     return render(request,'core/info.html')
 
-def login(request):
-    Usuarios= Usuario.objects.all()
-    data = {
-        'usuarios':Usuarios
-    }
-    return render(request,'core/login.html',data)
+
 
 
 def productos(request):
