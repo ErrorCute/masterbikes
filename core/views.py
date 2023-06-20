@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
-from .models import Pedido,Usuario
+from .models import Pedido,SolicitudArriendo
 from django.contrib.auth.decorators import login_required,permission_required
-from .forms import UsuarioUserForm
+from .forms import UsuarioUserForm,Nuevasolicitud
 from django.contrib.auth import authenticate,login
 
 @login_required
@@ -45,9 +45,7 @@ def info(request):
 def productos(request):
     return render(request,'core/productos.html')
 
-@login_required
-def arriendo(request):
-    return render(request,'core/arriendo.html')  
+
 
 def servicios(request):
     return render(request,'core/servicios.html')  
@@ -59,7 +57,34 @@ def base(request):
 
 
 def vistaArriendo(request):
+
+
+    
     return render(request,'core/vistaArriendo.html')
 
 
 
+@login_required
+def arriendo(request):
+    solicituds= SolicitudArriendo.objects.all()
+    data = {
+        
+        'solicituds':solicituds ,
+        'form': Nuevasolicitud()
+    }
+    if request.method == 'POST':
+        formulario= Nuevasolicitud(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data['mesaje']= "guardado correctamente"
+    
+
+    return render(request,'core/arriendo.html',data)  
+
+
+
+def eliminar_solicitud(request, id):
+    solicitud = SolicitudArriendo.objects.get(id_arriendo=id)
+    solicitud.delete()
+
+    return redirect(to="arriendo")

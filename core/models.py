@@ -34,3 +34,30 @@ class Usuario(models.Model):
     clave =models.CharField(max_length=100)
     rut =models.ForeignKey(Cliente,on_delete=CASCADE)
 
+
+
+
+class Bicicleta(models.Model):
+    id_bicileta= models.CharField(primary_key=True,max_length=20)
+    nombre= models.CharField(max_length=100)
+    modelo=models.CharField(max_length=30)
+    disponible= models.BooleanField()
+
+    def __str__(self):
+        return self.modelo
+
+
+
+
+class SolicitudArriendo(models.Model):
+
+    id_arriendo=models.AutoField(primary_key=True)
+    bicicleta=models.ForeignKey(Bicicleta,on_delete=CASCADE)
+    fecha_arriendo=models.DateField(blank=False,null=False)
+    cantidad=models.IntegerField()
+    estado=models.BooleanField(default=False)
+    
+    def __str__(self):
+        return str(self.id_arriendo)
+   
+

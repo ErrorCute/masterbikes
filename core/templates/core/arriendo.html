@@ -11,36 +11,61 @@
         
     </div>
     <div class="container" style="background-color: rgba(0, 153, 102);" >
-          <form action="" id= "formulario-arriendo">
-            
-              <label for="nombre_arrendador">Nombre</label>
-              <input type="text" class="form-control" name="nombre_arrendador" id="nombre_arrendador">
-              <br>
-              <label for="tipo_bicicleta">Tipo bicileta</label>
-              <input type="text" class="form-control" name="tipo_bicicleta" id="tipo_bicicleta">
-              <br>
-              <label for="correo" >Correo electroninco</label>
-              <input type="text"   maxlength="40" class="form-control" name="" id="correo">
-                <br>
-              <label for="fecha_arriendo">Fecha arriendo</label>
-              <input type="date" class="form-control" name="fecha_arriendo" id="fecha_arriendo">
-              <br>
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault">Acepta condiciones </label>
-              <br>
-              <br>
-              <div id="errores" class="alert alert-danger"></div>
-              <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
-              <input type="reset" class="btn btn-primary" id="limpiar" value="limpiar">
-              
-              <br>
+          <form action=""method="POST">
+            {% csrf_token %} 
+           <table>           
+            {{ form.as_table }}
 
-            </form>
-            <br>
+           </table> 
+
+           <input type="submit" class="btn btn-success"  value="Crear solicitud">
+           <input type="reset" class="btn btn-danger"  value="limpiar">
+
+   
+          </form>
+          {{ mensaje }} 
+          <br>
 
           </div>
     </div>
 
+
+    <div class="container" style=" background-color:rgba(0, 153, 102);">
+      <h1  style="color: aliceblue;">Mis solicitudes</h1>
+      </div>
+
+  
+    <div class="container" style=" background-color:rgba(0, 153, 102);">
+
+      <table class="table table-hover">
+          <thead>
+          <tr>
+              <th scope="col">Numero solicitud </th>
+              <th scope="col">Modelo bicicleta </th>
+              <th scope="col">fecha arriendo </th>
+              <th scope="col">Cantidad </th>
+              <th scope="col">Estado </th>
+          </tr>
+          </thead>
+          {% for s in solicituds %} 
+          <tbody>
+              <tr>
+                  <td> {{ s.id_arriendo }} </td>
+                  <td> {{ s.bicicleta }} </td>
+                  <td> {{ s.fecha_arriendo }} </td>
+                  <td> {{ s.cantidad }} </td>
+                  <td> {{ s.estado }} </td>
+                  <br>
+                
+                  <td> 
+                    <a href="{% url 'eliminar_solicitud' s.id_arriendo%}" class="btn btn-danger">Eliminar</a>
+                  </td>
+
+              </tr>
+          </tbody>
+          {% endfor %}
+        
+      </table>
 
 {% endblock %}
 

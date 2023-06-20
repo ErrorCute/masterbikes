@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Cliente,Pedido
+from . models import Cliente,Pedido,SolicitudArriendo,Bicicleta
 
 # Register your models here.
 
@@ -16,3 +16,5 @@ class PedidosAdmin(admin.ModelAdmin):
 
 admin.site.register(Cliente, ClientesAdmin)
 admin.site.register(Pedido, PedidosAdmin)
+admin.site.register(SolicitudArriendo)
+admin.site.register(Bicicleta)
