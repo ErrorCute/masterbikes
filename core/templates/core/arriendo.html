@@ -54,11 +54,14 @@
                   <td> {{ s.bicicleta }} </td>
                   <td> {{ s.fecha_arriendo }} </td>
                   <td> {{ s.cantidad }} </td>
-                  <td> {{ s.estado }} </td>
+                  <td> {{ s.estado}} </td>
+                  
                   <br>
                 
                   <td> 
                     <a href="{% url 'eliminar_solicitud' s.id_arriendo%}" class="btn btn-danger">Eliminar</a>
+                  
+                    <a href="{% url 'mod_arrien' s.id_arriendo%}" class="btn btn-secondary">Modificar</a>
                   </td>
 
               </tr>

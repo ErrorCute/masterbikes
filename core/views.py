@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
-from .models import Pedido,SolicitudArriendo
+from .models import Pedido,SolicitudArriendo,Bicicleta
 from django.contrib.auth.decorators import login_required,permission_required
-from .forms import UsuarioUserForm,Nuevasolicitud
+from .forms import UsuarioUserForm,Nuevasolicitud,Modificarestado
 from django.contrib.auth import authenticate,login
 
 @login_required
@@ -59,8 +59,26 @@ def base(request):
 def vistaArriendo(request):
 
 
-    
+
+
+
     return render(request,'core/vistaArriendo.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -82,9 +100,29 @@ def arriendo(request):
     return render(request,'core/arriendo.html',data)  
 
 
+ 
 
 def eliminar_solicitud(request, id):
     solicitud = SolicitudArriendo.objects.get(id_arriendo=id)
     solicitud.delete()
 
     return redirect(to="arriendo")
+
+
+def mod_arrien(request, id):
+    solicituds = SolicitudArriendo.objects.get(id_arriendo=id)
+    data = {
+            'form': Modificarestado()
+            }
+    if request.method == 'POST':
+        formulario = Modificarestado(data=request.POST, instance=solicituds)
+        if formulario.is_valid():
+            formulario.save()
+            data['mesaje'] = "modificado correctamente"
+            data['form']= formulario
+
+            return redirect(to="arriendo")
+            
+
+
+    return render(request,'core/mod_arrien.html',data)

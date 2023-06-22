@@ -20,6 +20,12 @@ class UsuarioUserForm(UserCreationForm):
 
 class Nuevasolicitud(ModelForm):
 
-    class Meta:
+     class Meta:
         model = SolicitudArriendo
         fields = ["id_arriendo","bicicleta","fecha_arriendo","cantidad"]
+
+
+class Modificarestado(ModelForm):
+     class Meta:
+        model = SolicitudArriendo
+        fields = ["estado"]        

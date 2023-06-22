@@ -1,0 +1,41 @@
+
+
+{% extends 'core/base.html' %}
+ 
+
+ {% load static %} 
+ 
+  
+
+  
+{% block contenido %}       
+
+<div class="container" style=" background-color:rgba(0, 153, 102);">
+<h1  style="color: aliceblue;">Modificar Solicitud</h1>
+</div>
+
+<div class="container" style=" background-color:rgba(0, 153, 102);">
+
+
+    <div class="container" style="background-color: rgba(0, 153, 102);" >
+        <form action=""method="POST">
+          {% csrf_token %} 
+         <table>           
+          {{ form.as_table }}
+   
+     
+
+          
+
+         </table> 
+
+         <input type="submit" class="btn btn-success"  value="Modificar">
+         <input type="reset" class="btn btn-danger"  value="limpiar">
+
+ 
+        </form>
+
+
+
+
+{% endblock %}
