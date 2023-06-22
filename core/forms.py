@@ -28,4 +28,5 @@ class Nuevasolicitud(ModelForm):
 class Modificarestado(ModelForm):
      class Meta:
         model = SolicitudArriendo
-        fields = ["estado"]        
+        fields = ["estado"]       
+        

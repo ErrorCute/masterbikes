@@ -55,9 +55,17 @@ class SolicitudArriendo(models.Model):
     bicicleta=models.ForeignKey(Bicicleta,on_delete=CASCADE)
     fecha_arriendo=models.DateField(blank=False,null=False)
     cantidad=models.IntegerField()
-    estado=models.BooleanField(default=False)
+    opciones = (
+        (True, 'Disponible'),
+        (False, 'No disponible'),
+    )
+    estado=models.BooleanField(choices=opciones)
     
     def __str__(self):
         return str(self.id_arriendo)
    
-
+    def get_estado_display(self):
+        if self.estado:
+            return 'Disponible'
+        else:
+            return 'No disponible'

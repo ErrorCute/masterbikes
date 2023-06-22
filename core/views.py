@@ -116,6 +116,8 @@ def mod_arrien(request, id):
             }
     if request.method == 'POST':
         formulario = Modificarestado(data=request.POST, instance=solicituds)
+        
+        
         if formulario.is_valid():
             formulario.save()
             data['mesaje'] = "modificado correctamente"
@@ -124,5 +126,7 @@ def mod_arrien(request, id):
             return redirect(to="arriendo")
             
 
-
     return render(request,'core/mod_arrien.html',data)
+
+
+
