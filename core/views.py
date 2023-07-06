@@ -1,5 +1,9 @@
 from django.shortcuts import render,redirect
-from .models import Pedido,SolicitudArriendo,Bicicleta
+
+from .Carrito import Carrito
+
+
+from .models import Pedido, Producto,SolicitudArriendo,Bicicleta
 from django.contrib.auth.decorators import login_required,permission_required
 from .forms import UsuarioUserForm,Nuevasolicitud,Modificarestado
 from django.contrib.auth import authenticate,login
@@ -13,9 +17,6 @@ def Pedidos(request):
 
     return render(request,'core/Pedidos.html',data)  
 
-
-def carrito(request):
-    return render(request,'core/carrito.html')
 
 
 
@@ -58,25 +59,7 @@ def base(request):
 
 def vistaArriendo(request):
 
-
-
-
-
     return render(request,'core/vistaArriendo.html')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -130,3 +113,31 @@ def mod_arrien(request, id):
 
 
 
+
+
+def carrito(request):
+    productos=Producto.objects.all()
+    return render(request,'core/carrito.html',{'productos':productos})
+
+def agregar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.agregar(producto)
+    return redirect(to="carrito")
+
+def eliminar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.eliminar(producto)
+    return redirect(to="carrito")
+
+def restar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.restar(producto)
+    return redirect(to="carrito")
+
+def limpiar_carrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect("carrito")

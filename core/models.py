@@ -28,12 +28,10 @@ class Pedido(models.Model):
         return self.nro_orden
     
 
-
 class Usuario(models.Model):
     usuario= models.CharField(primary_key=True,max_length=11)
     clave =models.CharField(max_length=100)
     rut =models.ForeignKey(Cliente,on_delete=CASCADE)
-
 
 
 
@@ -45,7 +43,6 @@ class Bicicleta(models.Model):
 
     def __str__(self):
         return self.modelo
-
 
 
 
@@ -69,3 +66,15 @@ class SolicitudArriendo(models.Model):
             return 'Disponible'
         else:
             return 'No disponible'
+
+
+class Producto (models.Model):
+    
+    nombre=models.CharField(max_length=64)
+    descripcion=models.CharField(max_length=200)
+    precio=models.IntegerField()
+
+    def __str__(self):
+        return f'{self.nombre} -> {self.precio}'
+
+

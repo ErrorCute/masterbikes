@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import base,carrito,form,info,login,productos,arriendo,servicios,vistaArriendo,Pedidos,eliminar_solicitud,mod_arrien
+from .views import agregar_producto, base,carrito, eliminar_producto,form,info, limpiar_carrito,login,productos,arriendo, restar_producto,servicios,vistaArriendo,Pedidos,eliminar_solicitud,mod_arrien
 
 urlpatterns=[
   
@@ -17,6 +17,13 @@ urlpatterns=[
     
     path('mod_arrien/<id>/',mod_arrien, name="mod_arrien"),
     
+
+    
+    path('carrito',carrito, name ="carrito"),
+    path('agregar/<int:producto_id>/', agregar_producto, name="Add"),
+    path('eliminar/<int:producto_id>/', eliminar_producto, name="Del"),
+    path('restar/<int:producto_id>/', restar_producto, name="Sub"),
+    path('limpiar/', limpiar_carrito, name="CLS"),
     
 
 
