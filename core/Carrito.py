@@ -15,6 +15,8 @@ class Carrito:
             self.carrito[id]={
                 "producto_id": producto.id,
                 "nombre": producto.nombre,
+                "precio":producto.precio,
+                # variable que se acumula el valor rescatado
                 "acumulado": producto.precio,
                 "cantidad": 1,
             }
